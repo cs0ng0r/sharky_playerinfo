@@ -1,6 +1,9 @@
 # Sharky Player Info
 
 Egy játékos infó panel, amely kijelzi a játékos adatait, illetve olyan információkat mint:
+- PP mennyiség
+- Vagyonban lévő járművek száma
+
 
 ## A színek a CSS-ben szerkeszthetőek
 
