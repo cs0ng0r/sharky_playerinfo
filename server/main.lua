@@ -1,5 +1,3 @@
---[[ FL_DASHBOARD-ből származik a kód, így nekik köszönhető ez a részlet. ]]--
-
 function createSQLColumn(name)
     local p = promise.new()
 
@@ -42,7 +40,7 @@ function loadPlayerPlayedTime(player)
 end
 
 CreateThread(function()
-    while true do
+    if Config.UseAdminCounter then
         count = 0
         local admins = exports["villamos_adutyv2"]:GetDutys()
         for _ in pairs(admins) do
@@ -62,20 +60,13 @@ ESX.RegisterServerCallback('dashboard:Name', function(source, cb)
     local jobgrade = xPlayer.getJob().grade_label
     local height = xPlayer.get('height')
     local sex = xPlayer.get('sex')
-    local admins = count
-    local sb = Player(source).state
-	local joinTime = sb.joinTime or os.time()
-    local currentSessionTime = os.time() - joinTime
-    local onlineTime = SecondsToClock(currentSessionTime)
-    local playedTime = (sb.playedTime or 0) + currentSessionTime
-    local playtime = SecondsToClock(playedTime)
     local group = xPlayer.getGroup()
     local pp = MySQL.scalar.await("SELECT premiumPoints FROM users WHERE identifier = ?", { xPlayer.identifier })
     local vehicleCount = MySQL.Sync.fetchScalar(
         "SELECT COUNT(*) FROM owned_vehicles WHERE owner = ?",
         { xPlayer.identifier }
     )
-    cb(PlayerName, Bank, Cash, date, job, jobgrade, height, sex, admins, vehicleCount, onlineTime, playtime, group, pp, xPlayer)
+    cb(PlayerName, Bank, Cash, date, job, jobgrade, height, sex, vehicleCount, group, pp, xPlayer)
 end)
 
 

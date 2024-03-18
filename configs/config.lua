@@ -12,8 +12,10 @@ Config.MenuKey = 57
 -- Server Name / Szerver név
 Config.ServerName = "Sharky Developer Server"
 
+Config.UseAdminCounter = false
+
 -- Server Link / Szerver link
-Config.Link = "discord.gg/invite"
+Config.Link = "discord.gg/cs0ng0r"
 
 -- Unit (height) / Mértékegység (magasság)
 Config.Unit = " cm"

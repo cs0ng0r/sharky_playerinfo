@@ -11,12 +11,12 @@ window.addEventListener("message", (event) => {
     hideUI.style.display = "none";
   }
 
-  if (data.playerCount != undefined) {
-    document.getElementById("player-text").innerHTML = data.playerCount;
-  }
-
   if (data.ServerName != undefined) {
     document.getElementById("ServerName").innerHTML = data.ServerName;
+  }
+
+  if (data.Link != undefined) {
+    document.getElementById("Link").innerHTML = data.Link;
   }
 
   if (data.playerName != undefined) {
@@ -47,21 +47,8 @@ window.addEventListener("message", (event) => {
     document.getElementById("vehicleCount").innerHTML = data.vehicleCount;
   }
 
-  if (data.currentSessionTime != undefined) {
-    document.getElementById("currentSessionTime").innerHTML =
-      data.currentSessionTime;
-  }
-
-  if (data.playtime != undefined) {
-    document.getElementById("playtime").innerHTML = data.playtime;
-  }
-
   if (data.steam != undefined) {
     document.getElementById("steam").innerHTML = data.steam;
-  }
-
-  if (data.admins != undefined) {
-    document.getElementById("admins").innerHTML = data.admins;
   }
 
   if (data.group != undefined) {

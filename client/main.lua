@@ -4,37 +4,33 @@ local showedUI = false
 CreateThread(function()
     while true do
         if IsControlJustReleased(0, Config.MenuKey) then
-                ESX.TriggerServerCallback('dashboard:Name',
-                function(PlayerName, Bank, Cash, date, job, jobgrade, height, sex, admins, vehicleCount, onlineTime, playtime, group, pp, xPlayer)
+            ESX.TriggerServerCallback('dashboard:Name',
+                function(PlayerName, Bank, Cash, date, job, jobgrade, height, sex, vehicleCount, group, pp)
                     showedUI = not showedUI
                     if showedUI then
                         TriggerScreenblurFadeIn(0.5)
                         showUI()
 
                         SendNUIMessage({
-                            playerCount = #GetActivePlayers(),
-                            playerName  = PlayerName,
-                            name = GetPlayerName(PlayerId()),
-                            bankMoney   = Bank,
-                            cash        = Cash,
-                            dob         = date,
-                            job         = job,
-                            jobgrade    = jobgrade,
-                            height      = height,
-                            sex         = sex,
-                            admins      = admins,
-                            pp = pp,
-                            group = group,
+                            playerName   = PlayerName,
+                            name         = GetPlayerName(PlayerId()),
+                            bankMoney    = Bank,
+                            cash         = Cash,
+                            dob          = date,
+                            job          = job,
+                            jobgrade     = jobgrade,
+                            height       = height,
+                            sex          = sex,
+                            pp           = pp,
+                            group        = group,
                             vehicleCount = vehicleCount,
-                            currentSessionTime = onlineTime,
-                            playtime = playtime,
-                            steam =       GetPlayerName(PlayerId()),
-                            id    =       GetPlayerServerId(PlayerId()),
-                            ServerName  = Config.ServerName,
-                            Link        = Config.Link,
-                            unit        = Config.Unit,
-                            Male        = Config.Male,
-                            Female      = Config.Female,
+                            steam        = GetPlayerName(PlayerId()),
+                            id           = GetPlayerServerId(PlayerId()),
+                            ServerName   = Config.ServerName,
+                            Link         = Config.Link,
+                            unit         = Config.Unit,
+                            Male         = Config.Male,
+                            Female       = Config.Female,
                         })
                     else
                         hideUI()
@@ -64,7 +60,6 @@ function hideUI()
     SetNuiFocus(false, false)
 end
 
-
-RegisterCommand('dashboard', function ()
+RegisterCommand('dashboard', function()
     showUI()
 end, false)
