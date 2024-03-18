@@ -8,8 +8,8 @@ CreateThread(function()
                 function(PlayerName, Bank, Cash, date, job, jobgrade, height, sex, vehicleCount, group, pp)
                     showedUI = not showedUI
                     if showedUI then
-                        TriggerScreenblurFadeIn(0.5)
                         showUI()
+                        
 
                         SendNUIMessage({
                             playerName   = PlayerName,
