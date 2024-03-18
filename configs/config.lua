@@ -10,7 +10,7 @@ Config.Admins = {
 Config.MenuKey = 57
 
 -- Server Name / Szerver név
-Config.ServerName = "Szerver Neve"
+Config.ServerName = "Sharky Developer Server"
 
 -- Server Link / Szerver link
 Config.Link = "discord.gg/invite"
