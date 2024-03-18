@@ -39,17 +39,6 @@ function loadPlayerPlayedTime(player)
 	Player(player).state.playedTime = playedTime
 end
 
-CreateThread(function()
-    if Config.UseAdminCounter then
-        count = 0
-        local admins = exports["villamos_adutyv2"]:GetDutys()
-        for _ in pairs(admins) do
-            count = count + 1
-        end
-        Wait(10000)
-    end
-end)
-
 ESX.RegisterServerCallback('dashboard:Name', function(source, cb)
     local xPlayer = ESX.GetPlayerFromId(source)
     local PlayerName = xPlayer.getName()
