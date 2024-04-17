@@ -74,12 +74,12 @@ document.addEventListener("keydown", logKey);
 
 function logKey(e) {
   if (e.key == "Escape") {
-    fetch(`https://${GetParentResourceName()}/close`);
+    fetch(`https://sharky_playerinfo/close`);
   }
 }
 
 document.getElementById("close").addEventListener("click", function () {
   // Itt írd be a kódodat, ami bezárja a panelt
   // Például, ha a panelnek van egy 'panel' ID-ja, akkor a következő kódot használhatod:
-  fetch(`https://${GetParentResourceName()}/close`);
+  fetch(`https://sharky_playerinfo/close`);
 });

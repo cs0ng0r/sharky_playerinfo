@@ -9,7 +9,7 @@ CreateThread(function()
                     showedUI = not showedUI
                     if showedUI then
                         showUI()
-                        
+
 
                         SendNUIMessage({
                             playerName   = PlayerName,
