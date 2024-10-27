@@ -7,7 +7,7 @@ Config.Admins = {
 }
 
 -- Open menu key / Menü megnyitása
-Config.MenuKey = 57
+Config.MenuKey = 'DELETE'
 
 -- Server Name / Szerver név
 Config.ServerName = "Sharky Developer Server"
@@ -19,8 +19,3 @@ Config.Link = "discord.gg/cs0ng0r"
 
 -- Unit (height) / Mértékegység (magasság)
 Config.Unit = " cm"
-
-
--- Locales / Fordítás
-Config.Male = "Férfi"
-Config.Female = "Nő"
