@@ -10,58 +10,84 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css"
+    />
     <link rel="stylesheet" href="style.css" />
-    <title>dashboard</title>
+    <title>Dashboard</title>
   </head>
-  <body>
-    <div class="container" id="panel">
-      <div class="cheader">
-        <h1 class="h1" id="ServerName">User Dashboard</h1>
-        <svg
-          id="close"
-          @click="hideUI()"
-          xmlns="http://www.w3.org/2000/svg"
-          width="30"
-          height="30"
-          viewBox="0 0 42 35"
-          fill="none"
-          style="position: absolute; right: 15px; top: 15px; cursor: pointer"
-        >
-          <path
-            d="M40.95 29.8983H33.6V3.39025C33.6 1.52028 32.1871 0 30.45 0H11.5493C9.81225 0 8.39934 1.52028 8.39934 3.39025V29.8983H1.05C0.469875 29.8983 0 30.3761 0 30.9661V33.1017C0 33.6917 0.469875 34.1695 1.05 34.1695H40.95C41.5301 34.1695 42 33.6917 42 33.1017V30.9661C42 30.3761 41.5301 29.8983 40.95 29.8983ZM27.2993 19.2203C26.1397 19.2203 25.1993 18.264 25.1993 17.0847C25.1993 15.9055 26.1397 14.9492 27.2993 14.9492C28.4589 14.9492 29.3993 15.9055 29.3993 17.0847C29.4 18.264 28.4596 19.2203 27.2993 19.2203Z"
-            fill-opacity="0.7"
-          />
-        </svg>
+  <body
+    class=" text-light d-flex justify-content-center align-items-center vh-100"
+  >
+    <div
+      class="card shadow-lg"
+      id="panel"
+      style="width: 100%; max-width: 800px"
+    >
+      <div
+        class="card-header bg-primary text-white d-flex justify-content-between align-items-center"
+      >
+        <h2 class="h4 mb-0" id="ServerName">User Dashboard</h2>
       </div>
 
-      <div class="cbody mt-3">
-        <div class="cbox">
-          Karakternév: <span id="playername">Betöltés</span>
-        </div>
-        <div class="cbox">Steam név: <span id="steam">Betöltés</span></div>
-        <div class="cbox">Munkahely: <span id="job">Betöltés</span></div>
-        <div class="cbox">Születési dátum: <span id="dob">Betöltés</span></div>
-        <div class="cbox">Magasság: <span id="height">Betöltés</span></div>
-        <div class="cbox">Nem: <span id="sex">Betöltés</span></div>
-        <div class="cbox">Készpénz: $<span id="mcash">Betöltés</span></div>
-        <div class="cbox">
-          Banki egyenleg: $<span id="mbank">Betöltés</span>
-        </div>
-        <div class="cbox">
-          Gépjárművek: <span id="vehicleCount">Betöltés</span>
-        </div>
-        <div class="cbox">Group: <span id="group">Betöltés</span></div>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item d-flex justify-content-between">
+            <span><i class="fas fa-user"></i> Karakternév:</span>
+            <span id="playername">Betöltés</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+            <span><i class="fa-brands fa-steam"></i> Steam név:</span>
+            <span id="steam">Betöltés</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+            <span><i class="fas fa-briefcase"></i> Munkahely:</span>
+            <span id="job">Betöltés</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+            <span
+              ><i class="fa-solid fa-calendar-days"></i> Születési dátum:</span
+            >
+            <span id="dob">Betöltés</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+            <span><i class="fa-solid fa-ruler-combined"></i> Magasság:</span>
+            <span id="height">Betöltés</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+            <span><i class="fa-regular fa-venus-mars"></i> Nem:</span>
+            <span id="sex">Betöltés</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+            <span><i class="fa-solid fa-money-bill"></i> Készpénz:</span>
+            <span id="mcash">$Betöltés</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+            <span><i class="fa-solid fa-piggy-bank"></i> Banki egyenleg:</span>
+            <span id="mbank">$Betöltés</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+            <span><i class="fa-solid fa-car"></i> Gépjárművek:</span>
+            <span id="vehicleCount">Betöltés</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+            <span><i class="fa-solid fa-shield"></i> Group:</span>
+            <span id="group">Betöltés</span>
+          </li>
+        </ul>
       </div>
 
-      <footer class="cbox2 text-center mt-3 p-2" id="Link">
+      <div class="card-footer text-center">
         <a
           href="https://example.com"
           target="_blank"
-          class="text-decoration-none text-light"
+          class="btn btn-outline-light btn-sm"
         >
-          Visit Official Site
+        <i class="fa-brands fa-discord"></i>
+          Szerver Discord
         </a>
-      </footer>
+      </div>
     </div>
 
     <script

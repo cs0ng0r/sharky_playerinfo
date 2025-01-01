@@ -49,7 +49,6 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-document.getElementById("close").addEventListener("click", closePanel);
 
 function closePanel() {
   fetch(`https://sharky_playerinfo/close`);
